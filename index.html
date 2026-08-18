@@ -1,10 +1,16 @@
 from pathlib import Path
 
-html_path = Path("/mnt/data/阿桑大腸麵線_四張媒體照片完整版.html")
-txt_path = Path("/mnt/data/阿桑大腸麵線_四張媒體照片完整版_完整編碼.txt")
+html_path = Path("/mnt/data/阿桑大腸麵線_最終index.html")
+txt_path = Path("/mnt/data/阿桑大腸麵線_最終index_完整編碼.txt")
 
 code = html_path.read_text(encoding="utf-8")
+
+# 確認這次確實是 HTML，而不是 Python 程式碼
+first_line = code.lstrip().splitlines()[0].strip().lower()
+assert first_line.startswith("<!doctype html>") or first_line.startswith("<html")
+
 txt_path.write_text(code, encoding="utf-8")
 
-print(f"完整 HTML 編碼已整理完成，共 {len(code):,} 個字元。")
-print(f"完整編碼檔案：{txt_path}")
+print("完成！這次是整個網頁的完整 HTML 編碼。")
+print(f"總字元數：{len(code):,}")
+print(f"完整編碼檔：{txt_path}")
