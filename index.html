@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>阿桑大腸麵線｜線上點餐</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;width:100%;overflow-x:hidden}
+body{background:#f7f3ea;color:#333;font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC","Microsoft JhengHei",sans-serif;padding-bottom:96px}
+.header{background:linear-gradient(135deg,#ef704d,#e85d3c);color:#fff;padding:24px 18px 22px;border-radius:0 0 24px 24px}
+.header h1{margin:0;font-size:28px;font-weight:900}
+.header p{margin:7px 0 0;font-size:15px}
+.wrap{width:100%;max-width:680px;margin:0 auto;padding:0 14px}
+.gallery{width:100%;padding-top:12px}
+.hero{width:100%;height:250px;display:block;object-fit:cover;border-radius:18px}
+.thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.thumbs img{width:100%;height:105px;display:block;object-fit:cover;border-radius:14px}
+.notice{margin-top:14px;background:#fff7d8;border-left:5px solid #f3bd2e;border-radius:14px;padding:13px 14px;font-size:15px;line-height:1.65}
+.title{font-size:22px;font-weight:900;margin:22px 3px 10px}
+.card{background:#fff;border-radius:17px;padding:14px;margin:9px 0;box-shadow:0 2px 12px rgba(0,0,0,.06);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.name{font-size:17px;font-weight:800}
+.price{font-size:17px;font-weight:900;color:#e85d3c;margin-top:4px}
+.qty{display:flex;align-items:center;gap:9px;flex:none}
+.qty button{width:38px;height:38px;border:0;border-radius:50%;background:#ef704d;color:#fff;font-size:23px;font-weight:800}
+.qty span{min-width:20px;text-align:center;font-size:18px;font-weight:800}
+.info{background:#fff;border-radius:17px;padding:16px;margin-top:20px;box-shadow:0 2px 12px rgba(0,0,0,.05);line-height:1.8}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.actions button{border:0;border-radius:12px;padding:12px;background:#eef5ff;color:#1767ad;font-weight:800}
+.bottom{position:fixed;z-index:20;left:0;right:0;bottom:0;background:rgba(255,255,255,.97);border-top:1px solid #ddd;padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+.cartbtn{display:block;width:100%;max-width:680px;margin:auto;border:0;border-radius:17px;background:#218be8;color:#fff;padding:15px;font-size:20px;font-weight:900}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.48);z-index:30;padding:18px;overflow:auto}
+.box{max-width:620px;margin:35px auto;background:#fff;border-radius:20px;padding:18px}
+.close{float:right;border:0;border-radius:50%;width:35px;height:35px;font-size:22px}
+.row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #eee}
+.total{text-align:right;color:#e85d3c;font-size:21px;font-weight:900;margin-top:12px}
+label{display:block;margin-top:12px;font-weight:700}
+input{width:100%;padding:12px;border:1px solid #ddd;border-radius:10px;font-size:16px;margin-top:6px}
+.submit{width:100%;margin-top:15px;padding:14px;border:0;border-radius:13px;background:#ef704d;color:#fff;font-size:17px;font-weight:900}
+@media(min-width:681px){.hero{height:340px}}
+
+.tiktok-panel{text-align:center;margin-bottom:20px}
+.tiktok-id{font-size:20px;font-weight:800;margin:5px 0}
+.tiktok-qr{display:block;width:min(82vw,360px);height:auto;margin:12px auto 4px;border-radius:12px}
+.tiktok-link{display:inline-block;margin:8px auto 12px;padding:11px 18px;background:#111;color:#fff;text-decoration:none;border-radius:12px;font-weight:800}
+.tiktok-id a{color:#111;text-decoration:none}
+
+.top-tiktok{max-width:680px;margin:12px auto 0;padding:0 14px}
+.top-tiktok a{display:block;text-align:center;background:#111;color:#fff;text-decoration:none;border-radius:14px;padding:14px 10px;font-size:18px;font-weight:800}
+</style>
+</head>
+<body>
+<header class="header"><div class="wrap">
+<h1>🍜 阿桑大腸麵線</h1><p>泉州街人氣小吃｜線上點餐</p>
+</div></header>
+<div class="top-tiktok">
+  <a href="https://www.tiktok.com/@mn93195353" target="_blank" rel="noopener noreferrer">
+    🎵 TikTok｜@mn93195353
+  </a>
+</div>
+
+
+<div class="wrap">
+<section class="gallery">
+<img class="hero" src="data:image/jpeg;base64,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
