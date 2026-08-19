@@ -25,19 +25,66 @@ body {
 .container {
   width: 100%;
   max-width: 650px;
-  margin: 0 auto;
-  padding: 18px 14px 40px;
+  margin: auto;
+  padding: 12px 10px 40px;
 }
 
-/* 頂部 */
+/* =========================
+   貨款餘額
+========================= */
+
+.balance {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 17px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.balance-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.balance-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.balance-input {
+  width: 150px;
+  text-align: right;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.remaining {
+  font-size: 25px;
+  font-weight: 800;
+  color: #2e7d32;
+}
+
+.remaining.insufficient {
+  color: #c62828;
+}
+
+/* =========================
+   標題
+========================= */
+
 .header {
   background: linear-gradient(135deg, #7b4b2a, #a66a3f);
   color: white;
   border-radius: 18px;
-  padding: 22px 18px;
+  padding: 20px 16px;
   text-align: center;
-  margin-bottom: 16px;
-  box-shadow: 0 5px 15px rgba(0,0,0,.12);
+  margin-bottom: 12px;
 }
 
 .header h1 {
@@ -46,15 +93,38 @@ body {
 }
 
 .header p {
-  margin: 8px 0 0;
-  opacity: .92;
+  margin: 7px 0 0;
   font-size: 14px;
 }
 
-/* 地點 */
+/* =========================
+   TikTok
+========================= */
+
+.tiktok {
+  display: block;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 12px;
+  padding: 13px;
+  margin-bottom: 16px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.tiktok:active {
+  transform: scale(.98);
+}
+
+/* =========================
+   地點
+========================= */
+
 .location {
   background: white;
-  border-radius: 16px;
+  border-radius: 18px;
   margin-bottom: 16px;
   overflow: hidden;
   box-shadow: 0 3px 12px rgba(0,0,0,.07);
@@ -63,18 +133,21 @@ body {
 .location-title {
   background: #fff3e8;
   color: #7b4b2a;
-  font-size: 20px;
+  font-size: 21px;
   font-weight: bold;
-  padding: 15px 16px;
+  padding: 16px;
   border-bottom: 1px solid #eee;
 }
 
-/* 品項 */
+/* =========================
+   品項
+========================= */
+
 .product {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 15px;
+  gap: 8px;
+  padding: 14px 10px;
   border-bottom: 1px solid #eee;
 }
 
@@ -83,14 +156,13 @@ body {
 }
 
 .product-info {
-  min-width: 0;
   flex: 1;
+  min-width: 0;
 }
 
 .product-name {
   font-size: 17px;
-  font-weight: 600;
-  line-height: 1.4;
+  font-weight: bold;
 }
 
 .product-price {
@@ -99,11 +171,14 @@ body {
   margin-top: 3px;
 }
 
-/* 數量 */
+/* =========================
+   數量
+========================= */
+
 .qty-box {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
   flex-shrink: 0;
 }
 
@@ -116,7 +191,6 @@ body {
   color: white;
   font-size: 22px;
   cursor: pointer;
-  line-height: 36px;
 }
 
 .qty-btn:active {
@@ -124,11 +198,11 @@ body {
 }
 
 .qty-input {
-  width: 58px;
+  width: 56px;
   height: 36px;
-  text-align: center;
   border: 1px solid #ccc;
   border-radius: 9px;
+  text-align: center;
   font-size: 17px;
   font-weight: bold;
   outline: none;
@@ -138,34 +212,30 @@ body {
   border-color: #7b4b2a;
 }
 
-.subtotal {
-  min-width: 70px;
-  text-align: right;
-  font-size: 14px;
-  color: #666;
-}
+/* =========================
+   訂單
+========================= */
 
-/* 訂單摘要 */
 .summary {
   background: white;
-  border-radius: 16px;
-  padding: 18px;
+  border-radius: 18px;
+  padding: 17px;
   margin-top: 16px;
   box-shadow: 0 3px 12px rgba(0,0,0,.07);
 }
 
 .summary h2 {
   margin: 0 0 12px;
-  font-size: 20px;
+  font-size: 21px;
 }
 
 .total {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 18px;
+  font-size: 19px;
   font-weight: bold;
-  padding: 12px 0;
+  padding: 11px 0;
   border-bottom: 1px solid #eee;
 }
 
@@ -176,29 +246,32 @@ body {
 
 .order-text {
   width: 100%;
-  min-height: 160px;
+  min-height: 300px;
   margin-top: 14px;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid #ddd;
-  border-radius: 10px;
+  border-radius: 11px;
   resize: vertical;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 16px;
+  line-height: 1.8;
   background: #fafafa;
 }
 
-/* 按鈕 */
+/* =========================
+   按鈕
+========================= */
+
 .buttons {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
-  margin-top: 12px;
+  margin-top: 11px;
 }
 
 .action-btn {
   border: none;
   border-radius: 11px;
-  padding: 13px 10px;
+  padding: 14px 10px;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -209,625 +282,425 @@ body {
   color: white;
 }
 
-.share-btn {
-  background: #eee;
-  color: #333;
-}
-
 .clear-btn {
-  width: 100%;
-  margin-top: 10px;
-  background: #f5f5f5;
-  color: #777;
+  background: #f2f2f2;
+  color: #666;
   border: 1px solid #ddd;
 }
 
-/* 網址區 */
-.link-box {
-  margin-top: 14px;
-  padding: 14px;
-  background: #f8f8f8;
-  border-radius: 10px;
-  font-size: 13px;
-  color: #666;
-  word-break: break-all;
-}
+/* =========================
+   手機
+========================= */
 
-.tiktok-link {
-  display: block;
-  margin-top: 13px;
-  padding: 11px;
-  background: #000;
-  color: white !important;
-  border-radius: 10px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.tiktok-link:active {
-  transform: scale(.98);
-}
-
-/* 手機 */
 @media (max-width: 480px) {
 
-  .container {
-    padding: 12px 10px 30px;
-  }
-
-  .product {
-    padding: 13px 10px;
+  .balance-input {
+    width: 135px;
   }
 
   .product-name {
     font-size: 16px;
   }
 
-  .qty-box {
-    gap: 4px;
-  }
-
   .qty-btn {
     width: 34px;
     height: 34px;
-    line-height: 34px;
   }
 
   .qty-input {
-    width: 52px;
+    width: 53px;
     height: 34px;
   }
 
-  .subtotal {
-    display: none;
-  }
 }
 </style>
 </head>
+
 
 <body>
 
 <div class="container">
 
-  <!-- 標題 -->
-  <div class="header">
-    <h1>📦 原料訂購</h1>
-    <p>選擇品項・輸入數量・快速整理訂單</p>
+
+<!-- =========================
+     貨款餘額
+========================= -->
+
+<div class="balance">
+
+  <div class="balance-title">
+    💰 貨款餘額
   </div>
 
-
-  <!-- ==================== -->
-  <!-- 重慶南路 -->
-  <!-- ==================== -->
-
-  <div class="location">
-
-    <div class="location-title">
-      📍 重慶南路
-    </div>
-
-
-    <!-- 麵線 -->
-    <div class="product"
-         data-name="麵線"
-         data-price="300">
-
-      <div class="product-info">
-        <div class="product-name">
-          麵線
-        </div>
-
-        <div class="product-price">
-          $300／包
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
-
-
-    <!-- 油蔥 -->
-    <div class="product"
-         data-name="油蔥"
-         data-price="65">
-
-      <div class="product-info">
-        <div class="product-name">
-          油蔥
-        </div>
-
-        <div class="product-price">
-          $65／包
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
-
-
-    <!-- 沙茶 -->
-    <div class="product"
-         data-name="沙茶"
-         data-price="95">
-
-      <div class="product-info">
-        <div class="product-name">
-          沙茶
-        </div>
-
-        <div class="product-price">
-          $95／包
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
-
-
-    <!-- 味素 -->
-    <div class="product"
-         data-name="味素"
-         data-price="940">
-
-      <div class="product-info">
-        <div class="product-name">
-          味素
-        </div>
-
-        <div class="product-price">
-          $940／箱（12包）
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
-
-
-    <!-- 地瓜粉 -->
-    <div class="product"
-         data-name="地瓜粉"
-         data-price="970">
-
-      <div class="product-info">
-        <div class="product-name">
-          地瓜粉
-        </div>
-
-        <div class="product-price">
-          $970／包
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
-
-
-    <!-- 鈦白粉 -->
-    <div class="product"
-         data-name="鈦白粉"
-         data-price="1400">
-
-      <div class="product-info">
-        <div class="product-name">
-          鈦白粉
-        </div>
-
-        <div class="product-price">
-          $1,400／包
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
-
-
-    <!-- 香油 -->
-    <div class="product"
-         data-name="香油"
-         data-price="1620">
-
-      <div class="product-info">
-        <div class="product-name">
-          香油
-        </div>
-
-        <div class="product-price">
-          $1,620／件
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
+  <div class="balance-row">
+
+    <span>
+      目前寄存貨款
+    </span>
+
+    <input
+      id="balanceInput"
+      class="balance-input"
+      type="number"
+      min="0"
+      value="20000"
+      inputmode="numeric">
 
   </div>
 
 
+  <div class="balance-row">
 
-  <!-- ==================== -->
-  <!-- 泉州街 -->
-  <!-- ==================== -->
+    <span>
+      扣除本次訂單後
+    </span>
 
-  <div class="location">
-
-    <div class="location-title">
-      📍 泉州街
-    </div>
-
-
-    <!-- 烏醋 -->
-    <div class="product"
-         data-name="烏醋"
-         data-price="760">
-
-      <div class="product-info">
-        <div class="product-name">
-          烏醋
-        </div>
-
-        <div class="product-price">
-          $760／箱
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
-
-
-    <!-- 白糖15斤 -->
-    <div class="product"
-         data-name="白糖15斤"
-         data-price="330">
-
-      <div class="product-info">
-        <div class="product-name">
-          白糖15斤
-        </div>
-
-        <div class="product-price">
-          $330
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
-
-
-    <!-- 白糖30斤 -->
-    <div class="product"
-         data-name="白糖30斤"
-         data-price="660">
-
-      <div class="product-info">
-        <div class="product-name">
-          白糖30斤
-        </div>
-
-        <div class="product-price">
-          $660
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
-
-
-    <!-- 分隔 -->
-    <div style="height:10px;"></div>
-
-
-    <!-- 紅糖10斤 -->
-    <div class="product"
-         data-name="紅糖10斤"
-         data-price="250">
-
-      <div class="product-info">
-        <div class="product-name">
-          紅糖10斤
-        </div>
-
-        <div class="product-price">
-          $250
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
-
-
-    <!-- 紅糖15斤 -->
-    <div class="product"
-         data-name="紅糖15斤"
-         data-price="375">
-
-      <div class="product-info">
-        <div class="product-name">
-          紅糖15斤
-        </div>
-
-        <div class="product-price">
-          $375
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
-
-
-    <!-- 紅糖20斤 -->
-    <div class="product"
-         data-name="紅糖20斤"
-         data-price="500">
-
-      <div class="product-info">
-        <div class="product-name">
-          紅糖20斤
-        </div>
-
-        <div class="product-price">
-          $500
-        </div>
-      </div>
-
-      <div class="qty-box">
-        <button class="qty-btn minus">−</button>
-
-        <input
-          class="qty-input"
-          type="number"
-          min="0"
-          value="0"
-          inputmode="numeric">
-
-        <button class="qty-btn plus">＋</button>
-      </div>
-
-      <div class="subtotal">$0</div>
-
-    </div>
+    <span
+      id="remaining"
+      class="remaining">
+      $20,000
+    </span>
 
   </div>
 
 
+  <div
+    id="balanceMessage"
+    style="
+      margin-top:7px;
+      text-align:right;
+      font-weight:bold;
+    ">
+  </div>
 
-  <!-- ==================== -->
-  <!-- 訂單 -->
-  <!-- ==================== -->
+</div>
 
-  <div class="summary">
 
-    <h2>🧾 訂單明細</h2>
+<!-- =========================
+     標題
+========================= -->
 
-    <div class="total">
-      <span>總金額</span>
+<div class="header">
 
-      <span
-        class="total-price"
-        id="totalPrice">
-        $0
-      </span>
+  <h1>
+    📦 原料訂購
+  </h1>
+
+  <p>
+    可按 ＋／−，也可以直接輸入數量
+  </p>
+
+</div>
+
+
+<!-- =========================
+     TikTok
+========================= -->
+
+<a
+  class="tiktok"
+  href="https://www.tiktok.com/@mn93195353?_r=1&_t=ZS-990ItKieSvJ"
+  target="_blank"
+  rel="noopener noreferrer">
+
+  🎵 TikTok｜@mn93195353
+
+</a>
+
+
+
+<!-- =========================
+     重慶南路
+========================= -->
+
+<div class="location">
+
+  <div class="location-title">
+    📍 重慶南路
+  </div>
+
+
+  <!-- 麵線 -->
+
+  <div
+    class="product"
+    data-name="麵線"
+    data-price="300">
+
+    <div class="product-info">
+
+      <div class="product-name">
+        麵線
+      </div>
+
+      <div class="product-price">
+        $300／包
+      </div>
+
     </div>
 
+    <div class="qty-box">
 
-    <textarea
-      id="orderText"
-      class="order-text"
-      readonly
-      placeholder="選擇品項與數量後，訂單內容會顯示在這裡"></textarea>
-
-
-    <div class="buttons">
-
-      <button
-        class="action-btn copy-btn"
-        onclick="copyOrder()">
-        📋 複製訂單
+      <button class="qty-btn minus">
+        −
       </button>
 
-      <button
-        class="action-btn share-btn"
-        onclick="sharePage()">
-        🔗 分享連結
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
       </button>
 
     </div>
 
-
-    <button
-      class="action-btn clear-btn"
-      onclick="clearAll()">
-      🗑️ 清除全部數量
-    </button>
+  </div>
 
 
-    <!-- 網頁連結 + TikTok -->
-    <div class="link-box">
+  <!-- 油蔥 -->
 
-      🔗 本頁連結：
+  <div
+    class="product"
+    data-name="油蔥"
+    data-price="65">
 
-      <br>
+    <div class="product-info">
 
-      <span id="pageLink"></span>
+      <div class="product-name">
+        油蔥
+      </div>
+
+      <div class="product-price">
+        $65／包
+      </div>
+
+    </div>
+
+    <div class="qty-box">
+
+      <button class="qty-btn minus">
+        −
+      </button>
+
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
+      </button>
+
+    </div>
+
+  </div>
 
 
-      <a
-        class="tiktok-link"
-        href="https://www.tiktok.com/@mn93195353?_r=1&_t=ZS-990HMMWBrsn"
-        target="_blank"
-        rel="noopener noreferrer">
+  <!-- 沙茶 -->
 
-        🎵 TikTok｜@mn93195353
+  <div
+    class="product"
+    data-name="沙茶"
+    data-price="95">
 
-      </a>
+    <div class="product-info">
+
+      <div class="product-name">
+        沙茶
+      </div>
+
+      <div class="product-price">
+        $95／包
+      </div>
+
+    </div>
+
+    <div class="qty-box">
+
+      <button class="qty-btn minus">
+        −
+      </button>
+
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- 味素 -->
+
+  <div
+    class="product"
+    data-name="味素"
+    data-price="940">
+
+    <div class="product-info">
+
+      <div class="product-name">
+        味素
+      </div>
+
+      <div class="product-price">
+        $940／箱（12包）
+      </div>
+
+    </div>
+
+    <div class="qty-box">
+
+      <button class="qty-btn minus">
+        −
+      </button>
+
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- 地瓜粉 -->
+
+  <div
+    class="product"
+    data-name="地瓜粉"
+    data-price="970">
+
+    <div class="product-info">
+
+      <div class="product-name">
+        地瓜粉
+      </div>
+
+      <div class="product-price">
+        $970／包
+      </div>
+
+    </div>
+
+    <div class="qty-box">
+
+      <button class="qty-btn minus">
+        −
+      </button>
+
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- 鈦白粉 -->
+
+  <div
+    class="product"
+    data-name="鈦白粉"
+    data-price="1400">
+
+    <div class="product-info">
+
+      <div class="product-name">
+        鈦白粉
+      </div>
+
+      <div class="product-price">
+        $1,400／包
+      </div>
+
+    </div>
+
+    <div class="qty-box">
+
+      <button class="qty-btn minus">
+        −
+      </button>
+
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- 香油 -->
+
+  <div
+    class="product"
+    data-name="香油"
+    data-price="1620">
+
+    <div class="product-info">
+
+      <div class="product-name">
+        香油
+      </div>
+
+      <div class="product-price">
+        $1,620／件
+      </div>
+
+    </div>
+
+    <div class="qty-box">
+
+      <button class="qty-btn minus">
+        −
+      </button>
+
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
+      </button>
 
     </div>
 
@@ -837,25 +710,362 @@ body {
 
 
 
+<!-- =========================
+     泉州街
+========================= -->
+
+<div class="location">
+
+  <div class="location-title">
+    📍 泉州街
+  </div>
+
+
+  <!-- 烏醋 -->
+
+  <div
+    class="product"
+    data-name="烏醋"
+    data-price="760">
+
+    <div class="product-info">
+
+      <div class="product-name">
+        烏醋
+      </div>
+
+      <div class="product-price">
+        $760／箱
+      </div>
+
+    </div>
+
+    <div class="qty-box">
+
+      <button class="qty-btn minus">
+        −
+      </button>
+
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- 白糖15斤 -->
+
+  <div
+    class="product"
+    data-name="白糖15斤"
+    data-price="330">
+
+    <div class="product-info">
+
+      <div class="product-name">
+        白糖15斤
+      </div>
+
+      <div class="product-price">
+        $330
+      </div>
+
+    </div>
+
+    <div class="qty-box">
+
+      <button class="qty-btn minus">
+        −
+      </button>
+
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- 白糖30斤 -->
+
+  <div
+    class="product"
+    data-name="白糖30斤"
+    data-price="660">
+
+    <div class="product-info">
+
+      <div class="product-name">
+        白糖30斤
+      </div>
+
+      <div class="product-price">
+        $660
+      </div>
+
+    </div>
+
+    <div class="qty-box">
+
+      <button class="qty-btn minus">
+        −
+      </button>
+
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- 大空格 -->
+
+  <div style="height:16px;"></div>
+
+
+  <!-- 紅糖10斤 -->
+
+  <div
+    class="product"
+    data-name="紅糖10斤"
+    data-price="250">
+
+    <div class="product-info">
+
+      <div class="product-name">
+        紅糖10斤
+      </div>
+
+      <div class="product-price">
+        $250
+      </div>
+
+    </div>
+
+    <div class="qty-box">
+
+      <button class="qty-btn minus">
+        −
+      </button>
+
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- 紅糖15斤 -->
+
+  <div
+    class="product"
+    data-name="紅糖15斤"
+    data-price="375">
+
+    <div class="product-info">
+
+      <div class="product-name">
+        紅糖15斤
+      </div>
+
+      <div class="product-price">
+        $375
+      </div>
+
+    </div>
+
+    <div class="qty-box">
+
+      <button class="qty-btn minus">
+        −
+      </button>
+
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- 紅糖20斤 -->
+
+  <div
+    class="product"
+    data-name="紅糖20斤"
+    data-price="500">
+
+    <div class="product-info">
+
+      <div class="product-name">
+        紅糖20斤
+      </div>
+
+      <div class="product-price">
+        $500
+      </div>
+
+    </div>
+
+    <div class="qty-box">
+
+      <button class="qty-btn minus">
+        −
+      </button>
+
+      <input
+        class="qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+      <button class="qty-btn plus">
+        ＋
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     訂單明細
+========================= -->
+
+<div class="summary">
+
+  <h2>
+    🧾 訂單明細
+  </h2>
+
+
+  <div class="total">
+
+    <span>
+      本次訂單
+    </span>
+
+    <span
+      class="total-price"
+      id="totalPrice">
+      $0
+    </span>
+
+  </div>
+
+
+  <textarea
+    id="orderText"
+    class="order-text"
+    readonly
+    placeholder="選擇品項與數量後，訂單內容會顯示在這裡">
+  </textarea>
+
+
+  <div class="buttons">
+
+    <button
+      class="action-btn copy-btn"
+      onclick="copyOrder()">
+
+      📋 複製訂單
+
+    </button>
+
+
+    <button
+      class="action-btn clear-btn"
+      onclick="clearAll()">
+
+      🗑️ 清除數量
+
+    </button>
+
+  </div>
+
+</div>
+
+
+</div>
+
+
+
 <script>
 
-/* ==========================
-   取得所有品項
-========================== */
+/* =========================
+   所有品項
+========================= */
 
 const products =
   document.querySelectorAll(".product");
 
 
-/* ==========================
-   更新訂單
-========================== */
+const balanceInput =
+  document.getElementById("balanceInput");
+
+
+/* =========================
+   更新全部資料
+========================= */
 
 function updateAll() {
 
   let total = 0;
 
-  let order = [];
+  let chongqingOrder = [];
+
+  let whiteSugar = [];
+
+  let brownSugar = [];
+
+  let other = [];
 
 
   products.forEach(product => {
@@ -866,11 +1076,9 @@ function updateAll() {
     const price =
       Number(product.dataset.price);
 
+
     const input =
       product.querySelector(".qty-input");
-
-    const subtotal =
-      product.querySelector(".subtotal");
 
 
     let qty =
@@ -893,67 +1101,313 @@ function updateAll() {
       qty * price;
 
 
-    subtotal.textContent =
-      "$" + money.toLocaleString();
-
-
     total += money;
 
 
+    /* 有訂購才加入 */
+
     if (qty > 0) {
 
-      order.push(
+      const item =
         name +
         " × " +
         qty +
         " = $" +
-        money.toLocaleString()
-      );
+        money.toLocaleString();
+
+
+      /* 重慶南路 */
+
+      if (
+        [
+          "麵線",
+          "油蔥",
+          "沙茶",
+          "味素",
+          "地瓜粉",
+          "鈦白粉",
+          "香油"
+        ].includes(name)
+      ) {
+
+        chongqingOrder.push(item);
+
+      }
+
+
+      /* 白糖 */
+
+      else if (
+        [
+          "白糖15斤",
+          "白糖30斤"
+        ].includes(name)
+      ) {
+
+        whiteSugar.push(item);
+
+      }
+
+
+      /* 紅糖 */
+
+      else if (
+        [
+          "紅糖10斤",
+          "紅糖15斤",
+          "紅糖20斤"
+        ].includes(name)
+      ) {
+
+        brownSugar.push(item);
+
+      }
+
+
+      /* 其他泉州街 */
+
+      else {
+
+        other.push(item);
+
+      }
 
     }
 
   });
 
 
-  /* 總金額 */
+  /* =========================
+     本次訂單金額
+  ========================= */
 
   document.getElementById(
     "totalPrice"
   ).textContent =
-    "$" + total.toLocaleString();
+    "$" +
+    total.toLocaleString();
 
 
-  /* 訂單文字 */
+  /* =========================
+     取得寄存餘額
+  ========================= */
 
-  let text = "";
+  let balance =
+    parseInt(balanceInput.value);
 
 
-  if (order.length > 0) {
+  if (
+    isNaN(balance) ||
+    balance < 0
+  ) {
 
-    text =
-      "📦 原料訂購\n\n" +
-      order.join("\n") +
-      "\n\n💰 總金額：$" +
-      total.toLocaleString();
+    balance = 0;
 
-  } else {
+  }
 
-    text =
-      "目前尚未選擇任何品項";
+
+  /* =========================
+     扣款
+  ========================= */
+
+  const remaining =
+    balance - total;
+
+
+  const remainingElement =
+    document.getElementById(
+      "remaining"
+    );
+
+
+  const message =
+    document.getElementById(
+      "balanceMessage"
+    );
+
+
+  remainingElement.textContent =
+    "$" +
+    remaining.toLocaleString();
+
+
+  /* 餘額不足 */
+
+  if (remaining < 0) {
+
+    remainingElement.className =
+      "remaining insufficient";
+
+
+    message.textContent =
+      "🔴 寄存餘額不足 $" +
+      Math.abs(remaining).toLocaleString();
+
+
+    message.style.color =
+      "#c62828";
+
+  }
+
+
+  /* 餘額足夠 */
+
+  else {
+
+    remainingElement.className =
+      "remaining";
+
+
+    if (total > 0) {
+
+      message.textContent =
+        "🟢 本次已自動扣款 $" +
+        total.toLocaleString();
+
+    }
+
+    else {
+
+      message.textContent = "";
+
+    }
+
+
+    message.style.color =
+      "#2e7d32";
+
+  }
+
+
+  /* =========================
+     建立訂單文字
+  ========================= */
+
+  let text =
+    "📦 原料訂購\n\n";
+
+
+  /* 重慶南路 */
+
+  if (
+    chongqingOrder.length > 0
+  ) {
+
+    text +=
+      "📍 重慶南路\n" +
+      chongqingOrder.join("\n") +
+      "\n\n\n";
+
+  }
+
+
+  /* 泉州街 */
+
+  if (
+    whiteSugar.length > 0 ||
+    brownSugar.length > 0 ||
+    other.length > 0
+  ) {
+
+    text +=
+      "📍 泉州街\n";
+
+
+    /* 烏醋 */
+
+    if (
+      other.length > 0
+    ) {
+
+      text +=
+        other.join("\n");
+
+      if (
+        whiteSugar.length > 0
+      ) {
+
+        text += "\n";
+
+      }
+
+    }
+
+
+    /* 白糖 */
+
+    if (
+      whiteSugar.length > 0
+    ) {
+
+      text +=
+        whiteSugar.join("\n");
+
+    }
+
+
+    /* 白糖與紅糖大空格 */
+
+    if (
+      brownSugar.length > 0
+    ) {
+
+      text +=
+        "\n\n\n" +
+        brownSugar.join("\n");
+
+    }
+
+
+    text +=
+      "\n\n\n";
+
+  }
+
+
+  /* =========================
+     金額
+  ========================= */
+
+  text +=
+    "💰 本次訂單：$" +
+    total.toLocaleString();
+
+
+  text +=
+    "\n💵 原貨款餘額：$" +
+    balance.toLocaleString();
+
+
+  text +=
+    "\n💵 扣款後餘額：$" +
+    remaining.toLocaleString();
+
+
+  /* 餘額不足 */
+
+  if (
+    remaining < 0
+  ) {
+
+    text +=
+      "\n🔴 還需補款：$" +
+      Math.abs(remaining).toLocaleString();
 
   }
 
 
   document.getElementById(
     "orderText"
-  ).value = text;
+  ).value =
+    text;
 
 }
 
 
-/* ==========================
+
+/* =========================
    ＋
-========================== */
+========================= */
 
 document
   .querySelectorAll(".plus")
@@ -961,10 +1415,10 @@ document
 
     button.addEventListener(
       "click",
-      () => {
+      function() {
 
         const input =
-          button.parentElement
+          this.parentElement
             .querySelector(".qty-input");
 
 
@@ -984,9 +1438,10 @@ document
   });
 
 
-/* ==========================
+
+/* =========================
    −
-========================== */
+========================= */
 
 document
   .querySelectorAll(".minus")
@@ -994,10 +1449,10 @@ document
 
     button.addEventListener(
       "click",
-      () => {
+      function() {
 
         const input =
-          button.parentElement
+          this.parentElement
             .querySelector(".qty-input");
 
 
@@ -1005,11 +1460,11 @@ document
           parseInt(input.value) || 0;
 
 
-        if (value > 0) {
-
-          value--;
-
-        }
+        value =
+          Math.max(
+            0,
+            value - 1
+          );
 
 
         input.value =
@@ -1024,9 +1479,10 @@ document
   });
 
 
-/* ==========================
+
+/* =========================
    手動輸入數量
-========================== */
+========================= */
 
 document
   .querySelectorAll(".qty-input")
@@ -1034,30 +1490,7 @@ document
 
     input.addEventListener(
       "input",
-      () => {
-
-        if (input.value === "") {
-
-          updateAll();
-
-          return;
-
-        }
-
-
-        let value =
-          parseInt(input.value);
-
-
-        if (
-          isNaN(value) ||
-          value < 0
-        ) {
-
-          input.value = 0;
-
-        }
-
+      function() {
 
         updateAll();
 
@@ -1067,9 +1500,25 @@ document
   });
 
 
-/* ==========================
+
+/* =========================
+   手動修改貨款餘額
+========================= */
+
+balanceInput.addEventListener(
+  "input",
+  function() {
+
+    updateAll();
+
+  }
+);
+
+
+
+/* =========================
    複製訂單
-========================== */
+========================= */
 
 function copyOrder() {
 
@@ -1086,20 +1535,22 @@ function copyOrder() {
 
     navigator.clipboard
       .writeText(text)
-      .then(() => {
+      .then(function() {
 
         alert(
           "✅ 訂單已複製！"
         );
 
       })
-      .catch(() => {
+      .catch(function() {
 
         fallbackCopy(text);
 
       });
 
-  } else {
+  }
+
+  else {
 
     fallbackCopy(text);
 
@@ -1108,7 +1559,7 @@ function copyOrder() {
 }
 
 
-/* 備用複製方法 */
+/* 備用複製 */
 
 function fallbackCopy(text) {
 
@@ -1117,13 +1568,18 @@ function fallbackCopy(text) {
       "textarea"
     );
 
-  textarea.value = text;
+
+  textarea.value =
+    text;
+
 
   document.body.appendChild(
     textarea
   );
 
+
   textarea.select();
+
 
   try {
 
@@ -1131,17 +1587,21 @@ function fallbackCopy(text) {
       "copy"
     );
 
+
     alert(
       "✅ 訂單已複製！"
     );
 
-  } catch (error) {
+  }
+
+  catch (error) {
 
     alert(
-      "請長按訂單內容後自行複製。"
+      "請長按訂單內容自行複製。"
     );
 
   }
+
 
   document.body.removeChild(
     textarea
@@ -1150,75 +1610,16 @@ function fallbackCopy(text) {
 }
 
 
-/* ==========================
-   分享網頁
-========================== */
 
-async function sharePage() {
-
-  const url =
-    window.location.href;
-
-
-  if (
-    navigator.share
-  ) {
-
-    try {
-
-      await navigator.share({
-
-        title:
-          "原料訂購",
-
-        text:
-          "📦 原料訂購連結",
-
-        url:
-          url
-
-      });
-
-    } catch (error) {
-
-      /* 使用者取消分享 */
-
-    }
-
-  } else {
-
-    try {
-
-      await navigator.clipboard
-        .writeText(url);
-
-      alert(
-        "🔗 網頁連結已複製！\n\n" +
-        "可以貼到 LINE、Messenger 或其他地方分享。"
-      );
-
-    } catch (error) {
-
-      alert(
-        "請直接複製瀏覽器網址列的網址。"
-      );
-
-    }
-
-  }
-
-}
-
-
-/* ==========================
-   清除全部
-========================== */
+/* =========================
+   清除數量
+========================= */
 
 function clearAll() {
 
   const yes =
     confirm(
-      "確定要清除所有數量嗎？"
+      "確定要清除所有訂購數量嗎？"
     );
 
 
@@ -1229,11 +1630,12 @@ function clearAll() {
   }
 
 
-  document
-    .querySelectorAll(".qty-input")
-    .forEach(input => {
+  products
+    .forEach(product => {
 
-      input.value = 0;
+      product
+        .querySelector(".qty-input")
+        .value = 0;
 
     });
 
@@ -1243,19 +1645,10 @@ function clearAll() {
 }
 
 
-/* ==========================
-   顯示目前網頁網址
-========================== */
 
-document.getElementById(
-  "pageLink"
-).textContent =
-  window.location.href;
-
-
-/* ==========================
+/* =========================
    啟動
-========================== */
+========================= */
 
 updateAll();
 
