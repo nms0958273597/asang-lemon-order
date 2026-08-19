@@ -1,1 +1,1367 @@
-o
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金吉・檸檬訂購</title>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Noto Sans TC",
+    "Microsoft JhengHei",
+    sans-serif;
+
+  background: #f5f6f8;
+  color: #222;
+}
+
+.container {
+  max-width: 650px;
+  margin: auto;
+  padding: 12px 10px 40px;
+}
+
+
+/* =========================
+   貨款餘額
+========================= */
+
+.balance {
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 14px;
+
+  box-shadow:
+    0 3px 12px rgba(0,0,0,.07);
+}
+
+.balance-title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.balance-input {
+  width: 180px;
+  text-align: right;
+
+  border: 1px solid #ccc;
+  border-radius: 11px;
+
+  padding: 10px;
+
+  font-size: 21px;
+  font-weight: 700;
+
+  outline: none;
+}
+
+.balance-input:focus {
+  border-color: #7b4b2a;
+}
+
+.balance-input::placeholder {
+  color: #999;
+  font-weight: 400;
+}
+
+.remaining {
+  font-size: 25px;
+  font-weight: 800;
+  color: #777;
+}
+
+.remaining.ok {
+  color: #2e7d32;
+}
+
+.remaining.bad {
+  color: #c62828;
+}
+
+
+/* =========================
+   標題
+========================= */
+
+.header {
+  background:
+    linear-gradient(
+      135deg,
+      #7b4b2a,
+      #a66a3f
+    );
+
+  color: #fff;
+
+  border-radius: 18px;
+
+  padding: 22px 16px;
+
+  text-align: center;
+
+  margin-bottom: 14px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 27px;
+}
+
+.header p {
+  margin: 7px 0 0;
+  font-size: 15px;
+}
+
+
+/* =========================
+   TikTok
+========================= */
+
+.tiktok {
+  display: block;
+
+  background: #000;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  text-align: center;
+
+  border-radius: 13px;
+
+  padding: 14px;
+
+  margin-bottom: 14px;
+
+  font-weight: 800;
+
+  font-size: 17px;
+}
+
+.tiktok:active {
+  transform: scale(.98);
+}
+
+
+/* =========================
+   品項區
+========================= */
+
+.items-card {
+  background: #fff;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  margin-bottom: 14px;
+
+  box-shadow:
+    0 3px 12px rgba(0,0,0,.07);
+}
+
+.section-title {
+  background: #fff3e8;
+
+  color: #7b4b2a;
+
+  font-size: 22px;
+
+  font-weight: 800;
+
+  padding: 17px;
+}
+
+
+/* =========================
+   品項
+========================= */
+
+.item {
+  background: #fff;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 18px 12px;
+
+  border-bottom:
+    1px solid #eee;
+}
+
+.item:last-child {
+  border-bottom: none;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.name {
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.price {
+  margin-top: 4px;
+
+  color: #d35400;
+
+  font-size: 17px;
+}
+
+
+/* =========================
+   數量
+========================= */
+
+.qty {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+}
+
+.btn {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background: #7b4b2a;
+
+  color: #fff;
+
+  font-size: 25px;
+
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(.94);
+}
+
+.input {
+  width: 62px;
+  height: 42px;
+
+  border:
+    1px solid #ccc;
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  font-size: 19px;
+
+  font-weight: 800;
+
+  outline: none;
+}
+
+.input:focus {
+  border-color: #7b4b2a;
+}
+
+
+/* =========================
+   訂單
+========================= */
+
+.summary {
+  background: #fff;
+
+  border-radius: 18px;
+
+  padding: 18px;
+
+  box-shadow:
+    0 3px 12px rgba(0,0,0,.07);
+}
+
+.summary h2 {
+  margin: 0 0 12px;
+
+  font-size: 22px;
+}
+
+.total {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  border-bottom:
+    1px solid #eee;
+
+  padding-bottom: 12px;
+}
+
+.total-price {
+  font-size: 27px;
+
+  color: #d35400;
+}
+
+textarea {
+  width: 100%;
+
+  min-height: 280px;
+
+  margin-top: 14px;
+
+  padding: 14px;
+
+  border:
+    1px solid #ddd;
+
+  border-radius: 12px;
+
+  background: #fafafa;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+
+  resize: vertical;
+
+  outline: none;
+}
+
+
+/* =========================
+   按鈕
+========================= */
+
+.buttons {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 10px;
+
+  margin-top: 12px;
+}
+
+.action {
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 15px;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.copy {
+  background: #7b4b2a;
+
+  color: #fff;
+}
+
+.clear {
+  background: #f1f1f1;
+
+  color: #666;
+
+  border:
+    1px solid #ddd;
+}
+
+
+/* =========================
+   手機
+========================= */
+
+@media (max-width:480px) {
+
+  .balance-input {
+    width: 160px;
+  }
+
+  .name {
+    font-size: 19px;
+  }
+
+  .btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .input {
+    width: 55px;
+    height: 38px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- ==================================================
+     貨款餘額
+================================================== -->
+
+<div class="balance">
+
+  <div class="balance-title">
+    💰 貨款餘額
+  </div>
+
+
+  <div class="row">
+
+    <span>
+      目前寄存貨款
+    </span>
+
+
+    <input
+      id="balance"
+      class="balance-input"
+      type="number"
+      min="0"
+      placeholder="請輸入"
+      inputmode="numeric">
+
+  </div>
+
+
+  <div class="row">
+
+    <span>
+      扣除本次訂單後
+    </span>
+
+
+    <span
+      id="remaining"
+      class="remaining">
+
+      請先輸入貨款
+
+    </span>
+
+  </div>
+
+
+  <div
+    id="message"
+    style="
+      margin-top:8px;
+      text-align:right;
+      font-weight:800;
+    ">
+
+  </div>
+
+</div>
+
+
+
+<!-- ==================================================
+     標題
+================================================== -->
+
+<div class="header">
+
+  <h1>
+    🍋 金吉・檸檬訂購
+  </h1>
+
+  <p>
+    可按 ＋／−，也可以直接輸入數量
+  </p>
+
+</div>
+
+
+
+<!-- ==================================================
+     TikTok
+================================================== -->
+
+<a
+  class="tiktok"
+  href="https://www.tiktok.com/@mn93195353?_r=1&_t=ZS-990ItKieSvJ"
+  target="_blank"
+  rel="noopener noreferrer">
+
+  🎵 TikTok｜@mn93195353
+
+</a>
+
+
+
+<!-- ==================================================
+     品項
+================================================== -->
+
+<div class="items-card">
+
+
+  <div class="section-title">
+
+    📦 品項
+
+  </div>
+
+
+
+  <!-- =====================
+       金吉
+  ====================== -->
+
+  <div
+    class="item"
+    data-name="金吉"
+    data-price="120">
+
+
+    <div class="item-info">
+
+
+      <div class="name">
+
+        金吉
+
+      </div>
+
+
+      <div class="price">
+
+        $120／瓶
+
+      </div>
+
+
+    </div>
+
+
+    <div class="qty">
+
+
+      <button class="btn minus">
+
+        −
+
+      </button>
+
+
+      <input
+        class="input qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+
+      <button class="btn plus">
+
+        ＋
+
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =====================
+       檸檬
+  ====================== -->
+
+  <div
+    class="item"
+    data-name="檸檬"
+    data-price="140">
+
+
+    <div class="item-info">
+
+
+      <div class="name">
+
+        檸檬
+
+      </div>
+
+
+      <div class="price">
+
+        $140／瓶
+
+      </div>
+
+
+    </div>
+
+
+    <div class="qty">
+
+
+      <button class="btn minus">
+
+        −
+
+      </button>
+
+
+      <input
+        class="input qty-input"
+        type="number"
+        min="0"
+        value="0"
+        inputmode="numeric">
+
+
+      <button class="btn plus">
+
+        ＋
+
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+
+
+<!-- ==================================================
+     訂單明細
+================================================== -->
+
+<div class="summary">
+
+
+  <h2>
+
+    🧾 訂單明細
+
+  </h2>
+
+
+  <div class="total">
+
+
+    <span>
+
+      本次訂單
+
+    </span>
+
+
+    <span
+      id="total"
+      class="total-price">
+
+      $0
+
+    </span>
+
+
+  </div>
+
+
+  <textarea
+    id="order"
+    readonly>
+  </textarea>
+
+
+  <div class="buttons">
+
+
+    <button
+      class="action copy"
+      onclick="copyOrder()">
+
+      📋 複製訂單
+
+    </button>
+
+
+    <button
+      class="action clear"
+      onclick="clearAll()">
+
+      🗑️ 清除數量
+
+    </button>
+
+
+  </div>
+
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+
+/* =========================
+   品項
+========================= */
+
+const items =
+  document.querySelectorAll(".item");
+
+
+const balance =
+  document.getElementById("balance");
+
+
+
+/* =========================
+   更新
+========================= */
+
+function update() {
+
+
+  let total = 0;
+
+
+  let lines = [];
+
+
+
+  items.forEach(item => {
+
+
+    const name =
+      item.dataset.name;
+
+
+    const price =
+      Number(
+        item.dataset.price
+      );
+
+
+    const input =
+      item.querySelector(
+        ".qty-input"
+      );
+
+
+    let qty =
+      parseInt(
+        input.value
+      );
+
+
+
+    if (
+      isNaN(qty) ||
+      qty < 0
+    ) {
+
+      qty = 0;
+
+      input.value = 0;
+
+    }
+
+
+
+    const amount =
+      qty * price;
+
+
+    total += amount;
+
+
+
+    if (qty > 0) {
+
+
+      lines.push(
+
+        name +
+        " × " +
+        qty +
+        " = $" +
+        amount.toLocaleString()
+
+      );
+
+    }
+
+
+  });
+
+
+
+  /* =========================
+     顯示訂單總額
+  ========================= */
+
+  document.getElementById(
+    "total"
+  ).textContent =
+
+    "$" +
+    total.toLocaleString();
+
+
+
+  /* =========================
+     訂單文字
+  ========================= */
+
+  let text =
+
+    "📦 金吉・檸檬訂購\n\n";
+
+
+
+  if (
+    lines.length > 0
+  ) {
+
+
+    text +=
+
+      "📋 訂購品項\n" +
+
+      lines.join("\n") +
+
+      "\n\n";
+
+  }
+
+
+
+  text +=
+
+    "💰 本次訂單：$" +
+
+    total.toLocaleString();
+
+
+
+  /* =========================
+     貨款
+  ========================= */
+
+  const raw =
+    balance.value.trim();
+
+
+  const remaining =
+    document.getElementById(
+      "remaining"
+    );
+
+
+  const message =
+    document.getElementById(
+      "message"
+    );
+
+
+
+  /* =========================
+     尚未輸入貨款
+  ========================= */
+
+  if (
+    raw === ""
+  ) {
+
+
+    remaining.textContent =
+      "請先輸入貨款";
+
+
+    remaining.className =
+      "remaining";
+
+
+    message.textContent = "";
+
+
+  }
+
+
+  /* =========================
+     已輸入貨款
+  ========================= */
+
+  else {
+
+
+    const balanceAmount =
+      Number(raw);
+
+
+    const result =
+      balanceAmount -
+      total;
+
+
+
+    remaining.textContent =
+
+      "$" +
+      result.toLocaleString();
+
+
+
+    /* =====================
+       餘額不足
+    ===================== */
+
+    if (
+      result < 0
+    ) {
+
+
+      remaining.className =
+        "remaining bad";
+
+
+      message.textContent =
+
+        "🔴 寄存餘額不足 $" +
+
+        Math.abs(
+          result
+        ).toLocaleString();
+
+
+      message.style.color =
+        "#c62828";
+
+
+    }
+
+
+    /* =====================
+       餘額足夠
+    ===================== */
+
+    else {
+
+
+      remaining.className =
+        "remaining ok";
+
+
+      if (
+        total > 0
+      ) {
+
+
+        message.textContent =
+
+          "🟢 本次已自動扣款 $" +
+
+          total.toLocaleString();
+
+
+      }
+
+
+      else {
+
+
+        message.textContent = "";
+
+      }
+
+
+      message.style.color =
+        "#2e7d32";
+
+    }
+
+
+
+    /* =====================
+       訂單增加貨款資訊
+    ===================== */
+
+    text +=
+
+      "\n💵 原貨款餘額：$" +
+
+      balanceAmount.toLocaleString();
+
+
+    text +=
+
+      "\n💵 扣款後餘額：$" +
+
+      result.toLocaleString();
+
+
+
+    if (
+      result < 0
+    ) {
+
+
+      text +=
+
+        "\n🔴 還需補款：$" +
+
+        Math.abs(
+          result
+        ).toLocaleString();
+
+    }
+
+
+  }
+
+
+
+  document.getElementById(
+    "order"
+  ).value = text;
+
+}
+
+
+
+/* =========================
+   ＋
+========================= */
+
+document
+  .querySelectorAll(".plus")
+  .forEach(button => {
+
+
+    button.addEventListener(
+      "click",
+      function() {
+
+
+        const input =
+          this.parentElement
+            .querySelector(
+              ".qty-input"
+            );
+
+
+        let value =
+          parseInt(
+            input.value
+          ) || 0;
+
+
+        input.value =
+          value + 1;
+
+
+        update();
+
+      }
+    );
+
+  });
+
+
+
+/* =========================
+   −
+========================= */
+
+document
+  .querySelectorAll(".minus")
+  .forEach(button => {
+
+
+    button.addEventListener(
+      "click",
+      function() {
+
+
+        const input =
+          this.parentElement
+            .querySelector(
+              ".qty-input"
+            );
+
+
+        let value =
+          parseInt(
+            input.value
+          ) || 0;
+
+
+        input.value =
+          Math.max(
+            0,
+            value - 1
+          );
+
+
+        update();
+
+      }
+    );
+
+  });
+
+
+
+/* =========================
+   手動輸入數量
+========================= */
+
+document
+  .querySelectorAll(".qty-input")
+  .forEach(input => {
+
+
+    input.addEventListener(
+      "input",
+      function() {
+
+        update();
+
+      }
+    );
+
+  });
+
+
+
+/* =========================
+   手動輸入貨款
+========================= */
+
+balance.addEventListener(
+  "input",
+  function() {
+
+    update();
+
+  }
+);
+
+
+
+/* =========================
+   清除
+========================= */
+
+function clearAll() {
+
+
+  const yes =
+    confirm(
+      "確定要清除所有訂購數量嗎？"
+    );
+
+
+  if (!yes) {
+
+    return;
+
+  }
+
+
+
+  items.forEach(item => {
+
+    item
+      .querySelector(
+        ".qty-input"
+      )
+      .value = 0;
+
+  });
+
+
+
+  update();
+
+}
+
+
+
+/* =========================
+   複製訂單
+========================= */
+
+function copyOrder() {
+
+
+  const text =
+    document.getElementById(
+      "order"
+    ).value;
+
+
+
+  if (
+    navigator.clipboard &&
+    window.isSecureContext
+  ) {
+
+
+    navigator.clipboard
+      .writeText(text)
+      .then(function() {
+
+
+        alert(
+          "✅ 訂單已複製！"
+        );
+
+
+      })
+      .catch(function() {
+
+
+        fallbackCopy(text);
+
+
+      });
+
+
+  }
+
+  else {
+
+
+    fallbackCopy(text);
+
+  }
+
+}
+
+
+
+/* =========================
+   備用複製
+========================= */
+
+function fallbackCopy(text) {
+
+
+  const textarea =
+    document.createElement(
+      "textarea"
+    );
+
+
+  textarea.value =
+    text;
+
+
+  document.body.appendChild(
+    textarea
+  );
+
+
+  textarea.select();
+
+
+
+  try {
+
+
+    document.execCommand(
+      "copy"
+    );
+
+
+    alert(
+      "✅ 訂單已複製！"
+    );
+
+
+  }
+
+  catch (error) {
+
+
+    alert(
+      "請長按訂單內容自行複製。"
+    );
+
+
+  }
+
+
+
+  document.body.removeChild(
+    textarea
+  );
+
+}
+
+
+
+/* =========================
+   啟動
+========================= */
+
+update();
+
+</script>
+
+
+</body>
+</html>
