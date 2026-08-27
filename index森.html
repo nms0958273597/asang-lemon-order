@@ -162,6 +162,7 @@ tr.clickable:hover{background:#222731}
   </div>
  </div>
 
+
  <section id="home" class="section active">
 
   <div class="hero">
@@ -206,6 +207,7 @@ tr.clickable:hover{background:#222731}
    </div>
   </div>
 
+
   <div class="card">
    <h2>🏆 綜合選股排行榜</h2>
 
@@ -218,6 +220,7 @@ tr.clickable:hover{background:#222731}
     <div class="loading">載入中…</div>
    </div>
   </div>
+
 
   <div class="card">
    <h2>🚨 9月「吞噬」警報邏輯</h2>
@@ -249,6 +252,7 @@ tr.clickable:hover{background:#222731}
 
  </section>
 
+
  <section id="hot" class="section">
 
   <div class="card">
@@ -264,6 +268,7 @@ tr.clickable:hover{background:#222731}
   </div>
 
  </section>
+
 
  <section id="sector" class="section">
 
@@ -286,6 +291,7 @@ tr.clickable:hover{background:#222731}
   </div>
 
  </section>
+
 
  <section id="institution" class="section">
 
@@ -319,6 +325,7 @@ tr.clickable:hover{background:#222731}
 
   </div>
 
+
   <div class="card">
    <h2>🚨 法人異常買超</h2>
    <div id="instTable" class="table-wrap">
@@ -326,12 +333,14 @@ tr.clickable:hover{background:#222731}
    </div>
   </div>
 
+
   <div class="card">
    <h2>📈 法人連買</h2>
    <div id="instStreak" class="table-wrap"></div>
   </div>
 
  </section>
+
 
  <section id="short" class="section">
 
@@ -368,6 +377,7 @@ tr.clickable:hover{background:#222731}
   </div>
 
  </section>
+
 
  <section id="intraday" class="section">
 
@@ -409,6 +419,7 @@ tr.clickable:hover{background:#222731}
   </div>
 
  </section>
+
 
  <section id="odd" class="section">
 
@@ -454,6 +465,7 @@ tr.clickable:hover{background:#222731}
 
  </section>
 
+
  <section id="long" class="section">
 
   <div class="card">
@@ -468,6 +480,7 @@ tr.clickable:hover{background:#222731}
    <div id="longTable" class="table-wrap" style="margin-top:10px"></div>
 
   </div>
+
 
   <div class="card">
 
@@ -503,6 +516,7 @@ tr.clickable:hover{background:#222731}
 
  </section>
 
+
  <section id="risk" class="section">
 
   <div class="card">
@@ -512,15 +526,18 @@ tr.clickable:hover{background:#222731}
    </div>
   </div>
 
+
   <div class="card">
    <h2>🚀 漲停股票</h2>
    <div id="limitUpTable" class="table-wrap"></div>
   </div>
 
+
   <div class="card">
    <h2>🔻 跌停股票</h2>
    <div id="limitDownTable" class="table-wrap"></div>
   </div>
+
 
   <div class="card">
 
@@ -554,6 +571,7 @@ tr.clickable:hover{background:#222731}
 
  </section>
 
+
  <section id="detail" class="section">
 
   <div class="card">
@@ -570,6 +588,7 @@ tr.clickable:hover{background:#222731}
  請以券商實際報價與交易所公告為準。
 </div>
 
+
 <script>
 
 const API='https://api.finmindtrade.com/api/v4/data';
@@ -583,6 +602,7 @@ let stockUniverseReady=false;
 let searchDebounce=null;
 let quoteTimer=null;
 
+
 const fallbackStocks=[
  {id:'2330',name:'台積電',price:1180,pct:1.1,volume:28000,amount:33000000000,amp:2.8,inst:3500,score:88},
  {id:'2317',name:'鴻海',price:252,pct:2.2,volume:18000,amount:4500000000,amp:3.1,inst:18000,score:91},
@@ -595,6 +615,7 @@ const fallbackStocks=[
  {id:'3376',name:'新日興',price:210,pct:8.3,volume:4615,amount:970000000,amp:9.0,inst:4615,score:80}
 ];
 
+
 function esc(s){
  return String(s??'').replace(/[&<>"']/g,m=>({
   '&':'&amp;',
@@ -605,6 +626,7 @@ function esc(s){
  }[m]));
 }
 
+
 function fmt(n,d=0){
  if(n===null||n===undefined||Number.isNaN(Number(n)))return'--';
 
@@ -614,23 +636,28 @@ function fmt(n,d=0){
  });
 }
 
+
 function sign(n){
  return Number(n)>0?'+':'';
 }
+
 
 function cls(n){
  return Number(n)>0?'red':Number(n)<0?'green':'';
 }
 
+
 function today(){
  return new Date().toISOString().slice(0,10);
 }
+
 
 function daysAgo(n){
  let d=new Date();
  d.setDate(d.getDate()-n);
  return d.toISOString().slice(0,10);
 }
+
 
 function showTab(id){
 
@@ -642,8 +669,10 @@ function showTab(id){
 
 }
 
+
 document.querySelectorAll('.nav button')
 .forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+
 
 async function getFin(dataset,dataId,startDate){
 
@@ -669,9 +698,11 @@ async function getFin(dataset,dataId,startDate){
  return j.data||[];
 }
 
+
 function latest(rows){
  return rows.length?rows[rows.length-1]:null;
 }
+
 
 function pick(r,...keys){
 
@@ -689,6 +720,7 @@ function pick(r,...keys){
  return null;
 }
 
+
 function normalizeText(s){
 
  return String(s||'')
@@ -704,6 +736,7 @@ function normalizeText(s){
 
 }
 
+
 function getField(o,patterns){
 
  const keys=Object.keys(o||{});
@@ -715,6 +748,7 @@ function getField(o,patterns){
  return k?o[k]:'';
 
 }
+
 
 async function loadStockUniverse(){
 
@@ -844,6 +878,7 @@ async function loadStockUniverse(){
 
  }
 
+
  const seen=new Set();
 
  stockUniverse=list.filter(x=>{
@@ -861,6 +896,7 @@ async function loadStockUniverse(){
 
  return stockUniverse;
 }
+
 
 function searchUniverse(q){
 
@@ -914,6 +950,7 @@ function searchUniverse(q){
  .slice(0,12);
 }
 
+
 function showSearchResults(rows){
 
  const box=document.getElementById('searchResults');
@@ -945,6 +982,7 @@ function showSearchResults(rows){
 
 }
 
+
 async function chooseSearch(id,name){
 
  document.getElementById('stockSearch').value=id;
@@ -954,6 +992,7 @@ async function chooseSearch(id,name){
  await searchStock();
 
 }
+
 
 async function searchStock(){
 
@@ -1015,10 +1054,12 @@ async function searchStock(){
   return;
  }
 
+
  document.getElementById('stockHero').innerHTML=
   '<div class="loading">'+
   '正在連線 '+esc(id)+' 市場報價…'+
   '</div>';
+
 
  try{
 
@@ -1091,6 +1132,7 @@ async function searchStock(){
 
 }
 
+
 async function fetchRealtimeQuote(id){
 
  const markets=['tse','otc'];
@@ -1153,6 +1195,7 @@ async function fetchRealtimeQuote(id){
  return null;
 }
 
+
 function startQuotePolling(id){
 
  if(quoteTimer)
@@ -1193,6 +1236,7 @@ function startQuotePolling(id){
  );
 
 }
+
 
 function updateRealtimeHeader(q){
 
@@ -1264,6 +1308,7 @@ function updateRealtimeHeader(q){
  updateValuation(p,q.id);
 
 }
+
 
 async function updateValuation(price,id){
 
@@ -1393,6 +1438,7 @@ async function updateValuation(price,id){
 
 }
 
+
 function calcMA(rows,n){
 
  const a=rows
@@ -1416,6 +1462,7 @@ function calcMA(rows,n){
 
 }
 
+
 function decision(p,pct,b){
 
  if(
@@ -1436,6 +1483,7 @@ function decision(p,pct,b){
  return'🟢 偏多觀察';
 
 }
+
 
 function biasCard(n,ma,p){
 
@@ -1463,6 +1511,7 @@ function biasCard(n,ma,p){
  </div>`;
 
 }
+
 
 function renderStock(s,f){
 
@@ -1684,6 +1733,7 @@ function renderStock(s,f){
 
 }
 
+
 async function loadInstitution(id){
 
  try{
@@ -1760,6 +1810,7 @@ async function loadInstitution(id){
 
 }
 
+
 function calcScore(o){
 
  let s=50;
@@ -1813,6 +1864,7 @@ function calcScore(o){
 
 }
 
+
 function scoreRows(rows){
 
  return rows
@@ -1846,6 +1898,7 @@ function scoreRows(rows){
  );
 
 }
+
 
 function table(data,cols){
 
@@ -1895,6 +1948,7 @@ function table(data,cols){
 
 }
 
+
 function quickSearch(id){
 
  document.getElementById(
@@ -1904,6 +1958,7 @@ function quickSearch(id){
  searchStock();
 
 }
+
 
 function buildFallback(){
 
@@ -1930,6 +1985,7 @@ function buildFallback(){
 
  const sorted=
   scoreRows(priceRows);
+
 
  document.getElementById(
   'overallTable'
@@ -1990,6 +2046,7 @@ function buildFallback(){
   ]
  );
 
+
  document.getElementById(
   'hotTable'
  ).innerHTML=
@@ -2036,12 +2093,14 @@ function buildFallback(){
   ]
  );
 
+
  const shortScore=
   Number(
    document.getElementById(
     'shortScore'
    ).value||70
   );
+
 
  document.getElementById(
   'shortTable'
@@ -2089,6 +2148,7 @@ function buildFallback(){
    }
   ]
  );
+
 
  document.getElementById(
   'intradayTable'
@@ -2158,6 +2218,7 @@ function buildFallback(){
   ]
  );
 
+
  const oddBudget=
   Number(
    document.getElementById(
@@ -2178,6 +2239,7 @@ function buildFallback(){
     'oddScore'
    ).value||65
   );
+
 
  document.getElementById(
   'oddTable'
@@ -2230,6 +2292,7 @@ function buildFallback(){
   ]
  );
 
+
  const long=
   priceRows.filter(
    x=>
@@ -2242,6 +2305,7 @@ function buildFallback(){
      '2344'
     ].includes(x.id)
   );
+
 
  document.getElementById(
   'longTable'
@@ -2285,6 +2349,7 @@ function buildFallback(){
  );
 
 }
+
 
 function renderSector(){
 
@@ -2334,6 +2399,7 @@ function renderSector(){
 
  ];
 
+
  document.getElementById(
   'sectorTable'
  ).innerHTML=
@@ -2380,6 +2446,7 @@ function renderSector(){
  '</tbody>'+
  '</table>';
 
+
  const next=
   [...priceRows]
    .filter(
@@ -2390,6 +2457,7 @@ function renderSector(){
      b.score-a.score
    )
    .slice(0,4);
+
 
  document.getElementById(
   'nextSector'
@@ -2415,6 +2483,7 @@ function renderSector(){
    </div>`
  ).join('');
 
+
  document.getElementById(
   'topSector'
  ).textContent=
@@ -2432,6 +2501,7 @@ function renderSector(){
 
 }
 
+
 function renderSpecial(){
 
  const up=
@@ -2443,6 +2513,7 @@ function renderSpecial(){
   priceRows.filter(
    x=>x.pct<=-9.5
   );
+
 
  document.getElementById(
   'limitUpTable'
@@ -2479,6 +2550,7 @@ function renderSpecial(){
   ]
  );
 
+
  document.getElementById(
   'limitDownTable'
  ).innerHTML=
@@ -2514,6 +2586,7 @@ function renderSpecial(){
   ]
  );
 
+
  document.getElementById(
   'disposalTable'
  ).innerHTML=
@@ -2526,6 +2599,7 @@ function renderSpecial(){
 
 }
 
+
 function renderInstitutionFallback(){
 
  const a=
@@ -2534,6 +2608,7 @@ function renderInstitutionFallback(){
     (x,y)=>
      y.inst-x.inst
    );
+
 
  document.getElementById(
   'instTable'
@@ -2576,6 +2651,7 @@ function renderInstitutionFallback(){
   ]
  );
 
+
  document.getElementById(
   'instStreak'
  ).innerHTML=
@@ -2604,6 +2680,7 @@ function renderInstitutionFallback(){
  );
 
 }
+
 
 function manualMode(){
 
@@ -2687,6 +2764,7 @@ function manualMode(){
 
 }
 
+
 function saveState(){
 
  state.saved=
@@ -2709,6 +2787,7 @@ function saveState(){
 
 }
 
+
 function loadSaved(){
 
  if(state.saved){
@@ -2721,6 +2800,7 @@ function loadSaved(){
  }
 
 }
+
 
 async function refreshAll(){
 
@@ -2756,6 +2836,7 @@ async function refreshAll(){
    </span>`
  )
  .join('');
+
 
  try{
 
@@ -2896,6 +2977,7 @@ async function refreshAll(){
 
 }
 
+
 function init(){
 
  loadSaved();
@@ -2905,10 +2987,12 @@ function init(){
  loadStockUniverse()
  .catch(()=>{});
 
+
  const searchInput=
   document.getElementById(
    'stockSearch'
   );
+
 
  searchInput.addEventListener(
   'input',
@@ -2964,6 +3048,7 @@ function init(){
   }
  );
 
+
  document.getElementById(
   'targetPE'
  ).addEventListener(
@@ -2976,6 +3061,7 @@ function init(){
     );
   }
  );
+
 
  document.getElementById(
   'highPEPct'
@@ -2990,6 +3076,7 @@ function init(){
   }
  );
 
+
  document.getElementById(
   'cheapPEPct'
  ).addEventListener(
@@ -3003,6 +3090,7 @@ function init(){
   }
  );
 
+
  document.getElementById(
   'refreshSec'
  ).addEventListener(
@@ -3012,6 +3100,7 @@ function init(){
     startQuotePolling(current.id);
   }
  );
+
 
  document.getElementById(
   'stockSearch'
@@ -3030,6 +3119,7 @@ function init(){
   }
  );
 
+
  [
   'shortScore',
   'oddBudget',
@@ -3046,6 +3136,7 @@ function init(){
  );
 
 }
+
 
 init();
 
