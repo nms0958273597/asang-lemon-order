@@ -39,11 +39,8 @@ body {
 
 .balance {
   background: #fff;
-
   border-radius: 18px;
-
   padding: 17px;
-
   margin-bottom: 12px;
 
   box-shadow:
@@ -57,13 +54,9 @@ body {
 
 .balance-row {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
   gap: 10px;
-
   margin-top: 10px;
 }
 
@@ -73,13 +66,11 @@ body {
   text-align: right;
 
   border: 1px solid #ccc;
-
   border-radius: 10px;
 
   padding: 10px;
 
   font-size: 21px;
-
   font-weight: bold;
 
   outline: none;
@@ -91,15 +82,12 @@ body {
 
 .balance-input::placeholder {
   color: #999;
-
   font-weight: normal;
 }
 
 .remaining {
   font-size: 25px;
-
   font-weight: 800;
-
   color: #777;
 }
 
@@ -137,16 +125,12 @@ body {
 }
 
 .header h1 {
-
   margin: 0;
-
   font-size: 25px;
 }
 
 .header p {
-
   margin: 7px 0 0;
-
   font-size: 14px;
 }
 
@@ -179,7 +163,6 @@ body {
 }
 
 .tiktok:active {
-
   transform: scale(.98);
 }
 
@@ -238,7 +221,6 @@ body {
 }
 
 .product:last-child {
-
   border-bottom: none;
 }
 
@@ -254,15 +236,77 @@ body {
   font-size: 17px;
 
   font-weight: bold;
+
+  margin-bottom: 5px;
 }
 
-.product-price {
+
+/* =========================
+   ★ 手動價格
+========================= */
+
+.price-row {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
 
   color: #d35400;
 
-  font-size: 14px;
+  font-size: 16px;
+}
 
-  margin-top: 3px;
+.price-symbol {
+
+  color: #d35400;
+
+  font-size: 17px;
+}
+
+.price-input {
+
+  width: 105px;
+
+  height: 31px;
+
+  padding: 2px 4px;
+
+  border: none;
+
+  border-bottom: 2px solid #e6b18d;
+
+  border-radius: 3px;
+
+  background: transparent;
+
+  color: #d35400;
+
+  font-size: 17px;
+
+  font-weight: 600;
+
+  outline: none;
+
+  text-align: left;
+}
+
+.price-input:focus {
+
+  border-bottom:
+    2px solid #d35400;
+
+  background: #fff8f3;
+}
+
+.price-unit {
+
+  color: #d35400;
+
+  font-size: 15px;
+
+  white-space: nowrap;
 }
 
 
@@ -301,7 +345,6 @@ body {
 }
 
 .qty-btn:active {
-
   transform: scale(.94);
 }
 
@@ -326,7 +369,6 @@ body {
 }
 
 .qty-input:focus {
-
   border-color: #7b4b2a;
 }
 
@@ -464,29 +506,48 @@ body {
 @media (max-width: 480px) {
 
   .balance-input {
-
     width: 165px;
   }
 
   .product-name {
-
     font-size: 16px;
   }
 
+  .price-input {
+    width: 82px;
+    font-size: 16px;
+  }
+
+  .price-unit {
+    font-size: 14px;
+  }
+
   .qty-btn {
-
     width: 34px;
-
     height: 34px;
   }
 
   .qty-input {
-
     width: 53px;
-
     height: 34px;
   }
 
+}
+
+
+/* =========================
+   防止 iPhone 點擊輸入框時
+   放大畫面
+========================= */
+
+input,
+textarea,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+input {
+  font-size: 16px;
 }
 
 </style>
@@ -506,37 +567,24 @@ body {
 
 <div class="balance">
 
-
   <div class="balance-title">
-
     💰 貨款餘額
-
   </div>
 
 
   <div class="balance-row">
 
     <span>
-
       目前寄存貨款
-
     </span>
 
-
     <input
-
       id="balanceInput"
-
       class="balance-input"
-
       type="number"
-
       min="0"
-
       value=""
-
       placeholder="請輸入"
-
       inputmode="numeric">
 
   </div>
@@ -545,16 +593,11 @@ body {
   <div class="balance-row">
 
     <span>
-
       扣除本次訂單後
-
     </span>
 
-
     <span
-
       id="remaining"
-
       class="remaining">
 
       請先輸入貨款
@@ -565,9 +608,7 @@ body {
 
 
   <div
-
     id="balanceMessage"
-
     style="
       margin-top:7px;
       text-align:right;
@@ -575,7 +616,6 @@ body {
     ">
 
   </div>
-
 
 </div>
 
@@ -587,20 +627,13 @@ body {
 
 <div class="header">
 
-
   <h1>
-
     📦 原料訂購
-
   </h1>
 
-
   <p>
-
-    可按 ＋／−，也可以直接輸入數量
-
+    價格、數量皆可手動調整
   </p>
-
 
 </div>
 
@@ -611,13 +644,9 @@ body {
 ================================================== -->
 
 <a
-
   class="tiktok"
-
   href="https://www.tiktok.com/@mn93195353?_r=1&_t=ZS-990ItKieSvJ"
-
   target="_blank"
-
   rel="noopener noreferrer">
 
   🎵 TikTok｜@mn93195353
@@ -634,9 +663,7 @@ body {
 
 
   <div class="location-title">
-
     📍 重慶南路
-
   </div>
 
 
@@ -644,66 +671,56 @@ body {
   <!-- 麵線 -->
 
   <div
-
     class="product"
-
     data-name="麵線"
-
-    data-price="300">
-
+    data-unit="包">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         麵線
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $300／包
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="300"
+          inputmode="numeric">
+
+        <span class="price-unit">
+          ／包
+        </span>
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -712,66 +729,56 @@ body {
   <!-- 油蔥 -->
 
   <div
-
     class="product"
-
     data-name="油蔥"
-
-    data-price="65">
-
+    data-unit="包">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         油蔥
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $65／包
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="65"
+          inputmode="numeric">
+
+        <span class="price-unit">
+          ／包
+        </span>
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -780,66 +787,56 @@ body {
   <!-- 沙茶 -->
 
   <div
-
     class="product"
-
     data-name="沙茶"
-
-    data-price="95">
-
+    data-unit="包">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         沙茶
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $95／包
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="95"
+          inputmode="numeric">
+
+        <span class="price-unit">
+          ／包
+        </span>
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -848,66 +845,56 @@ body {
   <!-- 味素 -->
 
   <div
-
     class="product"
-
     data-name="味素"
-
-    data-price="940">
-
+    data-unit="箱（12包）">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         味素
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $940／箱（12包）
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="940"
+          inputmode="numeric">
+
+        <span class="price-unit">
+          ／箱（12包）
+        </span>
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -916,66 +903,56 @@ body {
   <!-- 地瓜粉 -->
 
   <div
-
     class="product"
-
     data-name="地瓜粉"
-
-    data-price="970">
-
+    data-unit="包">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         地瓜粉
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $970／包
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="970"
+          inputmode="numeric">
+
+        <span class="price-unit">
+          ／包
+        </span>
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -984,66 +961,56 @@ body {
   <!-- 鈦白粉 -->
 
   <div
-
     class="product"
-
     data-name="鈦白粉"
-
-    data-price="1400">
-
+    data-unit="包">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         鈦白粉
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $1,400／包
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="1400"
+          inputmode="numeric">
+
+        <span class="price-unit">
+          ／包
+        </span>
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -1052,66 +1019,56 @@ body {
   <!-- 香油 -->
 
   <div
-
     class="product"
-
     data-name="香油"
-
-    data-price="1620">
-
+    data-unit="件">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         香油
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $1,620／件
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="1620"
+          inputmode="numeric">
+
+        <span class="price-unit">
+          ／件
+        </span>
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -1128,9 +1085,7 @@ body {
 
 
   <div class="location-title">
-
     📍 泉州街
-
   </div>
 
 
@@ -1138,66 +1093,56 @@ body {
   <!-- 烏醋 -->
 
   <div
-
     class="product"
-
     data-name="烏醋"
-
-    data-price="760">
-
+    data-unit="箱">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         烏醋
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $760／箱
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="760"
+          inputmode="numeric">
+
+        <span class="price-unit">
+          ／箱
+        </span>
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -1206,66 +1151,52 @@ body {
   <!-- 白糖15斤 -->
 
   <div
-
     class="product"
-
     data-name="白糖15斤"
-
-    data-price="330">
-
+    data-unit="">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         白糖15斤
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $330
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="330"
+          inputmode="numeric">
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -1274,72 +1205,58 @@ body {
   <!-- 白糖30斤 -->
 
   <div
-
     class="product"
-
     data-name="白糖30斤"
-
-    data-price="660">
-
+    data-unit="">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         白糖30斤
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $660
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="660"
+          inputmode="numeric">
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
 
 
-  <!-- 白糖與紅糖之間的空格 -->
+  <!-- 白糖與紅糖之間空格 -->
 
   <div style="height:16px;"></div>
 
@@ -1348,66 +1265,52 @@ body {
   <!-- 紅糖10斤 -->
 
   <div
-
     class="product"
-
     data-name="紅糖10斤"
-
-    data-price="250">
-
+    data-unit="">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         紅糖10斤
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $250
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="250"
+          inputmode="numeric">
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -1416,66 +1319,52 @@ body {
   <!-- 紅糖15斤 -->
 
   <div
-
     class="product"
-
     data-name="紅糖15斤"
-
-    data-price="375">
-
+    data-unit="">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         紅糖15斤
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $375
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="375"
+          inputmode="numeric">
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -1484,66 +1373,52 @@ body {
   <!-- 紅糖20斤 -->
 
   <div
-
     class="product"
-
     data-name="紅糖20斤"
-
-    data-price="500">
-
+    data-unit="">
 
     <div class="product-info">
 
-
       <div class="product-name">
-
         紅糖20斤
-
       </div>
 
+      <div class="price-row">
 
-      <div class="product-price">
+        <span class="price-symbol">
+          $
+        </span>
 
-        $500
+        <input
+          class="price-input"
+          type="number"
+          min="0"
+          value="500"
+          inputmode="numeric">
 
       </div>
-
 
     </div>
 
 
     <div class="qty-box">
 
-
       <button class="qty-btn minus">
-
         −
-
       </button>
-
 
       <input
-
         class="qty-input"
-
         type="number"
-
         min="0"
-
         value="0"
-
         inputmode="numeric">
 
-
       <button class="qty-btn plus">
-
         ＋
-
       </button>
 
-
     </div>
-
 
   </div>
 
@@ -1560,25 +1435,18 @@ body {
 
 
   <h2>
-
     🧾 訂單明細
-
   </h2>
 
 
   <div class="total">
 
     <span>
-
       本次訂單
-
     </span>
 
-
     <span
-
       class="total-price"
-
       id="totalPrice">
 
       $0
@@ -1589,25 +1457,17 @@ body {
 
 
   <textarea
-
     id="orderText"
-
     class="order-text"
-
     readonly
-
     placeholder="選擇品項與數量後，訂單內容會顯示在這裡">
-
   </textarea>
 
 
   <div class="buttons">
 
-
     <button
-
       class="action-btn copy-btn"
-
       onclick="copyOrder()">
 
       📋 複製訂單
@@ -1616,15 +1476,12 @@ body {
 
 
     <button
-
       class="action-btn clear-btn"
-
       onclick="clearAll()">
 
       🗑️ 清除數量
 
     </button>
-
 
   </div>
 
@@ -1658,41 +1515,66 @@ const balanceInput =
 
 function updateAll() {
 
-
   let total = 0;
-
 
   let chongqingOrder = [];
 
-
   let whiteSugar = [];
 
-
   let brownSugar = [];
-
 
   let other = [];
 
 
-
   products.forEach(product => {
-
 
     const name =
       product.dataset.name;
 
+    const unit =
+      product.dataset.unit || "";
 
-    const price =
-      Number(product.dataset.price);
+
+    /* =====================
+       價格
+    ===================== */
+
+    const priceInput =
+      product.querySelector(
+        ".price-input"
+      );
 
 
-    const input =
-      product.querySelector(".qty-input");
+    let price =
+      parseFloat(
+        priceInput.value
+      );
+
+
+    if (
+      isNaN(price) ||
+      price < 0
+    ) {
+
+      price = 0;
+
+    }
+
+
+    /* =====================
+       數量
+    ===================== */
+
+    const qtyInput =
+      product.querySelector(
+        ".qty-input"
+      );
 
 
     let qty =
-      parseInt(input.value);
-
+      parseInt(
+        qtyInput.value
+      );
 
 
     if (
@@ -1702,11 +1584,14 @@ function updateAll() {
 
       qty = 0;
 
-      input.value = 0;
+      qtyInput.value = 0;
 
     }
 
 
+    /* =====================
+       小計
+    ===================== */
 
     const money =
       qty * price;
@@ -1715,15 +1600,13 @@ function updateAll() {
     total += money;
 
 
-
     /* =====================
-       有數量才顯示
+       有數量才加入訂單
     ===================== */
 
     if (qty > 0) {
 
-
-      const item =
+      let item =
         name +
         " × " +
         qty +
@@ -1731,13 +1614,23 @@ function updateAll() {
         money.toLocaleString();
 
 
+      if (unit !== "") {
 
-      /* 重慶南路 */
+        item +=
+          "（" +
+          unit +
+          "）";
+
+      }
+
+
+      /* ===================
+         重慶南路
+      =================== */
 
       if (
 
         [
-
           "麵線",
           "油蔥",
           "沙茶",
@@ -1745,7 +1638,6 @@ function updateAll() {
           "地瓜粉",
           "鈦白粉",
           "香油"
-
         ].includes(name)
 
       ) {
@@ -1755,16 +1647,15 @@ function updateAll() {
       }
 
 
-
-      /* 白糖 */
+      /* ===================
+         白糖
+      =================== */
 
       else if (
 
         [
-
           "白糖15斤",
           "白糖30斤"
-
         ].includes(name)
 
       ) {
@@ -1774,17 +1665,16 @@ function updateAll() {
       }
 
 
-
-      /* 紅糖 */
+      /* ===================
+         紅糖
+      =================== */
 
       else if (
 
         [
-
           "紅糖10斤",
           "紅糖15斤",
           "紅糖20斤"
-
         ].includes(name)
 
       ) {
@@ -1794,8 +1684,9 @@ function updateAll() {
       }
 
 
-
-      /* 其他 */
+      /* ===================
+         其他
+      =================== */
 
       else {
 
@@ -1803,9 +1694,7 @@ function updateAll() {
 
       }
 
-
     }
-
 
   });
 
@@ -1820,7 +1709,6 @@ function updateAll() {
   ).textContent =
 
     "$" +
-
     total.toLocaleString();
 
 
@@ -1845,34 +1733,28 @@ function updateAll() {
     );
 
 
-
   /* =========================
-     還沒有輸入貨款
+     尚未輸入貨款
   ========================= */
 
   if (raw === "") {
 
-
     remainingElement.textContent =
       "請先輸入貨款";
-
 
     remainingElement.className =
       "remaining";
 
-
     message.textContent = "";
-
 
   }
 
 
   /* =========================
-     已經輸入貨款
+     已輸入貨款
   ========================= */
 
   else {
-
 
     const balance =
       Number(raw);
@@ -1882,23 +1764,17 @@ function updateAll() {
       balance - total;
 
 
-
     remainingElement.textContent =
 
       "$" +
-
       remaining.toLocaleString();
-
 
 
     /* =====================
        餘額不足
     ===================== */
 
-    if (
-      remaining < 0
-    ) {
-
+    if (remaining < 0) {
 
       remainingElement.className =
         "remaining insufficient";
@@ -1916,7 +1792,6 @@ function updateAll() {
       message.style.color =
         "#c62828";
 
-
     }
 
 
@@ -1926,13 +1801,11 @@ function updateAll() {
 
     else {
 
-
       remainingElement.className =
         "remaining ok";
 
 
       if (total > 0) {
-
 
         message.textContent =
 
@@ -1940,12 +1813,9 @@ function updateAll() {
 
           total.toLocaleString();
 
-
       }
 
-
       else {
-
 
         message.textContent = "";
 
@@ -1955,9 +1825,7 @@ function updateAll() {
       message.style.color =
         "#2e7d32";
 
-
     }
-
 
   }
 
@@ -1971,15 +1839,13 @@ function updateAll() {
     "📦 原料訂購\n\n";
 
 
-
-  /* =====================
+  /* =========================
      重慶南路
-  ===================== */
+  ========================= */
 
   if (
     chongqingOrder.length > 0
   ) {
-
 
     text +=
 
@@ -1993,9 +1859,9 @@ function updateAll() {
 
 
 
-  /* =====================
+  /* =========================
      泉州街
-  ===================== */
+  ========================= */
 
   if (
 
@@ -2007,22 +1873,20 @@ function updateAll() {
 
   ) {
 
-
     text +=
 
       "📍 泉州街\n";
 
 
-
-    /* 烏醋 */
+    /* =====================
+       其他
+    ===================== */
 
     if (
       other.length > 0
     ) {
 
-
       text +=
-
         other.join("\n");
 
 
@@ -2034,35 +1898,30 @@ function updateAll() {
 
       }
 
-
     }
 
 
-
-    /* 白糖 */
+    /* =====================
+       白糖
+    ===================== */
 
     if (
       whiteSugar.length > 0
     ) {
 
-
       text +=
-
         whiteSugar.join("\n");
 
     }
 
 
-
     /* =====================
        白糖 → 紅糖
-       大空格
     ===================== */
 
     if (
       brownSugar.length > 0
     ) {
-
 
       text +=
 
@@ -2074,7 +1933,6 @@ function updateAll() {
 
 
     text +=
-
       "\n\n\n";
 
   }
@@ -2094,13 +1952,12 @@ function updateAll() {
 
 
   /* =========================
-     有輸入貨款才顯示
+     有輸入貨款
   ========================= */
 
   if (
     raw !== ""
   ) {
-
 
     const balance =
       Number(raw);
@@ -2110,13 +1967,11 @@ function updateAll() {
       balance - total;
 
 
-
     text +=
 
       "\n💵 原貨款餘額：$" +
 
       balance.toLocaleString();
-
 
 
     text +=
@@ -2126,13 +1981,13 @@ function updateAll() {
       remaining.toLocaleString();
 
 
-
-    /* 不足 */
+    /* =====================
+       不足
+    ===================== */
 
     if (
       remaining < 0
     ) {
-
 
       text +=
 
@@ -2144,9 +1999,7 @@ function updateAll() {
 
     }
 
-
   }
-
 
 
   document.getElementById(
@@ -2158,18 +2011,16 @@ function updateAll() {
 
 
 /* =========================
-   ＋增加
+   ＋增加數量
 ========================= */
 
 document
   .querySelectorAll(".plus")
   .forEach(button => {
 
-
     button.addEventListener(
       "click",
       function() {
-
 
         const input =
           this.parentElement
@@ -2191,7 +2042,6 @@ document
         updateAll();
 
       }
-
     );
 
   });
@@ -2199,18 +2049,16 @@ document
 
 
 /* =========================
-   −減少
+   −減少數量
 ========================= */
 
 document
   .querySelectorAll(".minus")
   .forEach(button => {
 
-
     button.addEventListener(
       "click",
       function() {
-
 
         const input =
           this.parentElement
@@ -2239,7 +2087,6 @@ document
         updateAll();
 
       }
-
     );
 
   });
@@ -2254,6 +2101,26 @@ document
   .querySelectorAll(".qty-input")
   .forEach(input => {
 
+    input.addEventListener(
+      "input",
+      function() {
+
+        updateAll();
+
+      }
+    );
+
+  });
+
+
+
+/* =========================
+   ★ 手動修改價格
+========================= */
+
+document
+  .querySelectorAll(".price-input")
+  .forEach(input => {
 
     input.addEventListener(
       "input",
@@ -2262,7 +2129,6 @@ document
         updateAll();
 
       }
-
     );
 
   });
@@ -2290,12 +2156,10 @@ balanceInput.addEventListener(
 
 function copyOrder() {
 
-
   const text =
     document.getElementById(
       "orderText"
     ).value;
-
 
 
   if (
@@ -2306,34 +2170,24 @@ function copyOrder() {
 
   ) {
 
-
     navigator.clipboard
-
       .writeText(text)
-
       .then(function() {
-
 
         alert(
           "✅ 訂單已複製！"
         );
 
-
       })
-
       .catch(function() {
-
 
         fallbackCopy(text);
 
-
       });
-
 
   }
 
   else {
-
 
     fallbackCopy(text);
 
@@ -2349,7 +2203,6 @@ function copyOrder() {
 
 function fallbackCopy(text) {
 
-
   const textarea =
     document.createElement(
       "textarea"
@@ -2360,6 +2213,13 @@ function fallbackCopy(text) {
     text;
 
 
+  textarea.style.position =
+    "fixed";
+
+  textarea.style.left =
+    "-9999px";
+
+
   document.body.appendChild(
     textarea
   );
@@ -2368,9 +2228,7 @@ function fallbackCopy(text) {
   textarea.select();
 
 
-
   try {
-
 
     document.execCommand(
       "copy"
@@ -2381,19 +2239,15 @@ function fallbackCopy(text) {
       "✅ 訂單已複製！"
     );
 
-
   }
 
   catch (error) {
-
 
     alert(
       "請長按訂單內容自行複製。"
     );
 
-
   }
-
 
 
   document.body.removeChild(
@@ -2410,7 +2264,6 @@ function fallbackCopy(text) {
 
 function clearAll() {
 
-
   const yes =
     confirm(
       "確定要清除所有訂購數量嗎？"
@@ -2418,16 +2271,12 @@ function clearAll() {
 
 
   if (!yes) {
-
     return;
-
   }
-
 
 
   products.forEach(
     product => {
-
 
       product
         .querySelector(
@@ -2435,10 +2284,8 @@ function clearAll() {
         )
         .value = 0;
 
-
     }
   );
-
 
 
   updateAll();
